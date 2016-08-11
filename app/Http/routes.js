@@ -17,4 +17,12 @@
 
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.on('/').render('js-app')
+
+const Post = use('App/Model/Post')
+
+Route.get('/api/posts', function * (request, response) {
+  const posts = yield Post.with('comments').fetch()
+
+  response.send(posts)
+})
