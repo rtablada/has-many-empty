@@ -4,7 +4,7 @@ const Lucid = use('Lucid')
 
 class Post extends Lucid {
   comments() {
-    return this.belongsTo('App/Model/Comment')
+    return this.hasMany('App/Model/Comment')
   }
 }
 

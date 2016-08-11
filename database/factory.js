@@ -27,3 +27,14 @@ Factory.blueprint('App/Model/Post', (fake) => {
     body: fake.paragraph()
   }
 })
+
+let index = 0
+
+Factory.blueprint('App/Model/Comment', (fake) => {
+  index++
+  return {
+    username: fake.username(),
+    body: fake.paragraph(),
+    post_id: index % 2 + 1
+  }
+})

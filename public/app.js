@@ -18,7 +18,7 @@
 
   const commentTemplate = `
     <div class="comment">
-      <h2 class="comment__username"></h2>
+      <h4 class="comment__username"></h2>
       <p class="comment__body"></p>
     </div>
   `
@@ -32,12 +32,12 @@
         postEl.querySelector('.post__title').innerText = post.title
         postEl.querySelector('.post__body').innerText = post.body
 
-        post.forEach((comment) => {
+        post.comments.forEach((comment) => {
           const commentEl = createElement(commentTemplate)
           postEl.appendChild(commentEl)
 
-          commentEl.querySelector('comment__username').innerText = comment.username
-          commentEl.querySelector('comment__body').innerText = comment.body
+          commentEl.querySelector('.comment__username').innerText = comment.username
+          commentEl.querySelector('.comment__body').innerText = comment.body
         })
       })
     })
